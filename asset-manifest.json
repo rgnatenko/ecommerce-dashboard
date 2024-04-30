@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "./static/css/main.683c6a01.css",
+    "main.js": "./static/js/main.10e4f0a1.js",
+    "static/media/followers.svg": "./static/media/followers.05a62ee4bdb74a58578c.svg",
+    "static/media/join.svg": "./static/media/join.4c1e0b82482a23537664.svg",
+    "static/media/menu.svg": "./static/media/menu.55fb3a111f00f6d0aed6.svg",
+    "static/media/blocked.svg": "./static/media/blocked.47a9663c9fbed8ed99a4.svg",
+    "static/media/star.svg": "./static/media/star.7521cfcdcb242c92c9f1.svg",
+    "static/media/cancel.svg": "./static/media/cancel.5df25a1f34e92d9d4116.svg",
+    "static/media/pause.svg": "./static/media/pause.bb0bdb06c1f98a43f656.svg",
+    "static/media/home.svg": "./static/media/home.19c11f2c4d9b643f95d3.svg",
+    "static/media/korea.svg": "./static/media/korea.d3e16b18a2da91b63184.svg",
+    "static/media/USA.svg": "./static/media/USA.e67f9f6c3b698651c6cc.svg",
+    "static/media/notification.svg": "./static/media/notification.4530549c5e38391422ba.svg",
+    "static/media/vietnam.svg": "./static/media/vietnam.98cb92b41dd9eec874cc.svg",
+    "static/media/india.svg": "./static/media/india.d250f3c040e25c6c6c67.svg",
+    "index.html": "./index.html",
+    "static/media/china.svg": "./static/media/china.9f31d715e7be8daa05a4.svg",
+    "static/media/search.svg": "./static/media/search.c63b65e8953b4809ba76.svg",
+    "static/media/down.svg": "./static/media/down.9725228b50f8b5c83261.svg",
+    "static/media/right.svg": "./static/media/right.491253c656a10ee4ee2a.svg",
+    "main.683c6a01.css.map": "./static/css/main.683c6a01.css.map",
+    "main.10e4f0a1.js.map": "./static/js/main.10e4f0a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.683c6a01.css",
+    "static/js/main.10e4f0a1.js"
+  ]
+}
