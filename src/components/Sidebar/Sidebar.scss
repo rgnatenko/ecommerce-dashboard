@@ -1,0 +1,40 @@
+.sidebar {
+  position: fixed;
+  z-index: 2;
+  top: $navbar-top-height;
+  width: $sidebar-width;
+  display: none;
+  background-color: $c-white;
+  height: calc(100vh - $navbar-top-height);
+
+  @include onDesktop {
+    @include flex-column;
+    padding: 20px;
+
+    border-right: 1px solid $input-border;
+  }
+
+  &--visible-on-mobile {
+    @include flex-spb-column;
+    grid-column: span 4;
+    width: 100%;
+    padding: 50px;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+  }
+
+  &__list {
+    width: 100%;
+
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &--open {
+      max-height: 100%;
+    }
+  }
+}

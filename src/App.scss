@@ -1,0 +1,35 @@
+@import './styles/utils/vars.scss';
+@import './styles/utils/mixins.scss';
+@import './styles/utils/reset.scss';
+
+@import './styles/icon/icon.scss';
+@import './styles/text/text.scss';
+@import './styles/input/input.scss';
+
+@import './components/Sidebar/Sidebar.scss';
+@import './components/NavBar/NavBar.scss';
+@import './components/ChartItem/ChartItem.scss';
+@import './components/Charts/Charts.scss';
+@import './components/DasboardAnalytics/DasboardAnalytics.scss';
+@import './components/User/User.scss';
+@import './components/Region/Region.scss';
+
+@import './ui/BarItem/BarItem.scss';
+@import './ui/Statistics/Statistics.scss';
+@import './ui/AnalyticsDataItem/AnalyticDataItem.scss';
+@import './ui/TopTextSection/TopTextSection.scss';
+@import './ui/TableTop/TableTop.scss';
+@import './ui/ItemsList/ItemsList.scss';
+
+@import './sections/ChannelStatistics/ChannelStatistics.scss';
+@import './sections/BlockedUsers/BlockedUsers.scss';
+@import './sections/RegionsByRevenue/RegionsByRevenue.scss';
+@import './sections/ContentAnalytics/ContentAnalytics.scss';
+
+@import './pages/TelegramStatistics/TelegramStatistics.scss';
+
+.App {
+  @include grid;
+
+  height: 100vh;
+}

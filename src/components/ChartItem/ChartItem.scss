@@ -1,0 +1,77 @@
+.chart {
+  @include flex-center-column;
+  justify-content: space-between;
+  gap: 24px;
+
+  background-color: $c-white;
+  padding: 20px;
+
+  border-radius: 8px;
+  @include border($input-border);
+
+  &__top {
+    position: relative;
+    width: 100%;
+    @include flex-spb;
+    align-items: flex-start;
+  }
+
+  &__info {
+    &-statistics {
+      @include flex;
+    }
+  }
+
+  &__graphic {
+    position: relative;
+    @include flex-center;
+  }
+
+  &__vertical-bar {
+    position: absolute;
+    z-index: 1;
+    @include width-height(115, 85);
+  }
+
+  &__vertical-tracker {
+    position: sticky;
+    z-index: 0;
+    @include width-height(115, 85);
+  }
+
+  &__statistics {
+    @include flex-column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__statisticsMessage {
+    @include flex-center;
+    padding: 2px 6px;
+
+    @include text-body;
+    font-size: 12px;
+    color: $c-warning;
+
+    border-radius: $input-border-radius;
+    @include border($c-warning);
+
+    background-color: #FFCC85;
+  }
+
+  &__doughnut {
+    position: relative;
+    height: 115px;
+  }
+
+  &__discount-percent {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+  }
+
+  &__blocked-users-bar {
+    height: 250px;
+    width: 400px;
+  }
+}

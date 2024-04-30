@@ -1,0 +1,26 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  grid-column: 1/-1;
+
+  @include flex-spb;
+
+  height: $navbar-top-height;
+
+  padding: 16px 30px;
+
+  background-color: $c-white;
+  @include border($input-border);
+
+  &__search {
+    width: 30%;
+  }
+
+  &__main {
+    @include flex-center;
+    gap: 0;
+  }
+}

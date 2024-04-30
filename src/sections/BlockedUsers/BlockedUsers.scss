@@ -1,0 +1,23 @@
+.blocked-users {
+  width: 100%;
+  @include grid;
+  row-gap: 32px;
+
+  padding: 32px;
+
+  background-color: $c-white;
+  border-block: 1px solid $input-border;
+
+  &__top {
+    grid-column: 1/-1;
+  }
+
+  &__list {
+    grid-column: 1/15;
+    overflow-x: auto;
+  }
+
+  &__chart {
+    grid-column: 16/-1;
+  }
+}

@@ -1,0 +1,73 @@
+.user {
+  @include flex-spb;
+  gap: 40px;
+
+  padding-block: 16px;
+  border-top: 1px solid $input-border;
+
+  &__head,
+  &__customer,
+  &__rating,
+  &__status,
+  &__time {
+    @include onDesktop {
+      width: max-content;
+    }
+  }
+
+  &__head {
+    @include flex;
+  }
+
+  &__product-name {
+    color: $c-info;
+  }
+
+  &__product-photo {
+    @include border($input-border);
+    border-radius: 8px;
+  }
+
+  &__avatar {
+    @include flex-center;
+    @include width-height(40, 40);
+
+    color: $c-info;
+    font-weight: 900;
+    line-height: 0;
+
+    background-color: #E5EDFF;
+    border-radius: 50%;
+  }
+
+
+  &__name-block {
+    @include flex;
+  }
+
+  &__reason {
+    color: $c-danger;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__status {
+    text-transform: uppercase;
+    line-height: 0;
+    @include flex-center;
+    padding: 12px;
+
+    color: $c-danger;
+
+    background-color: $c-danger-light;
+    @include border($c-danger);
+    border-radius: 3px;
+  }
+
+  &__time {
+    display: block;
+    font-weight: 700;
+  }
+}

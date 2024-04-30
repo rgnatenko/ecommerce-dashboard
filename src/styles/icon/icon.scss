@@ -1,0 +1,101 @@
+.icon {
+  @include flex-center;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition-duration: $effect-duration;
+  transition-property: background-image;
+
+  &--menu {
+    background-image: url('./../../../public/menu.svg');
+    @include width-height(20, 20);
+  }
+
+  &--notification {
+    background-image: url('./../../../public/notification.svg');
+    @include width-height(20, 20);
+  }
+
+  &--user {
+    background-image: url('./../../../public/user.png');
+    @include width-height(40, 40);
+    border-radius: 50%;
+  }
+
+  &--right {
+    background-image: url('./../../../public/right.svg');
+
+    @include width-height(7, 7);
+  }
+
+  &--down {
+    background-image: url('./../../../public/down.svg');
+
+    @include width-height(7, 7);
+  }
+
+  &--home {
+    background-image: url('./../../../public/home.svg');
+  }
+
+  &--search {
+    background-image: url('./../../../public/search.svg');
+    @include width-height(13, 13);
+  }
+
+  &--followers,
+  &--join,
+  &--blocked,
+  &--cancel,
+  &--pause,
+  &--star {
+    @include width-height(46, 46);
+  }
+
+  &--star {
+    background-image: url('./../../../public/star.svg');
+  }
+
+  &--pause {
+    background-image: url('./../../../public/pause.svg');
+  }
+
+  &--cancel {
+    background-image: url('./../../../public/cancel.svg');
+  }
+
+  &--followers {
+    background-image: url('./../../../public/followers.svg');
+  }
+
+  &--join {
+    background-image: url('./../../../public/join.svg');
+  }
+
+  &--blocked {
+    background-image: url('./../../../public/blocked.svg');
+  }
+
+  &--India {
+    background-image: url('./../../../public/india.svg');
+  }
+
+  &--South_Korea {
+    background-image: url('./../../../public/korea.svg');
+  }
+
+  &--China {
+    background-image: url('./../../../public/china.svg');
+  }
+
+  &--USA  {
+    background-image: url('./../../../public/USA.svg');
+  }
+
+  &--Vietnam {
+    background-image: url('./../../../public/vietnam.svg');
+  }
+}

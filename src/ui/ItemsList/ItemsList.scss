@@ -1,0 +1,16 @@
+.list {
+  @include flex-column;
+  gap: 0;
+
+  &__review {
+    width: 100%;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $input-border;
+  }
+
+  &__table-top {
+    width: max-content;
+  }
+}

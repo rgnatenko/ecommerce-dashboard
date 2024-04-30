@@ -1,0 +1,12 @@
+.channel-statistics {
+  @include grid;
+  padding: 32px;
+
+  &__analytics {
+    grid-column: 1/12;
+  }
+
+  &__charts {
+    grid-column: 13/-1;
+  }
+}

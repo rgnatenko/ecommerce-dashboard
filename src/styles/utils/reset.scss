@@ -1,0 +1,54 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+
+  &:visited {
+    color: none;
+  }
+}
+
+input {
+  appearance: none;
+  border-color: transparent;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: 0px;
+
+  cursor: pointer;
+}
+
+img {
+  @include flex-center;
+}
+
+p {
+  font-size: 13px;
+}

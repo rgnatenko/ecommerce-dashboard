@@ -1,0 +1,22 @@
+.telegram-statistics {
+  position: relative;
+  grid-column: span 4;
+
+  @include flex-center-column;
+  justify-content: flex-start;
+  gap: 0;
+
+  background-color: $bg;
+
+  @include onTablet {
+    grid-column: span 12;
+  }
+
+  @include onDesktop {
+    grid-column: 5/-1;
+  }
+
+  &__channel-statistics {
+    margin-top: 80px;
+  }
+}

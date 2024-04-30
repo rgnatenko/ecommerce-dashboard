@@ -1,0 +1,74 @@
+.table-top {
+  @include flex;
+  gap: 40px;
+
+  border-top: 1px solid $input-border;
+
+  &__item {
+    @include flex;
+    font-size: 13px;
+
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &--user {
+      @include onDesktop {
+        padding-right: 130px;
+      }
+    }
+
+    &--reason {
+      @include onDesktop {
+        padding-right: 100px;
+      }
+    }
+
+    &--status {
+      @include onDesktop {
+        padding-right: 140px;
+      }
+    }
+
+    &--time {
+      @include onDesktop {}
+    }
+
+    &--country {
+      padding-right: 65px;
+    }
+
+    &--users {
+      padding-right: 45px;
+    }
+
+    &--transactions {
+      padding-right: 25px;
+    }
+
+    &--revenue {
+      padding-right: 35px;
+    }
+
+    &--totalUsersAmount,
+    &--totalTransactions,
+    &--totalRevenue,
+    &--totalConvRate {
+      font-weight: 400;
+      font-size: 20px;
+      padding-block: 10px;
+    }
+
+    &--totalUsersAmount {
+      padding-left: 170px;
+      padding-right: 90px;
+    }
+
+    &--totalTransactions {
+      padding-right: 20px;
+    }
+
+    &--totalRevenue {
+      padding-right: 50px;
+    }
+  }
+}

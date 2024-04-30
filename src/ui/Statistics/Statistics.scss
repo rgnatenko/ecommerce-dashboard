@@ -1,0 +1,52 @@
+.statistics {
+  @include text-body;
+  @include flex-spb;
+  width: 100%;
+
+  &__info {
+    @include flex;
+  }
+}
+
+.square {
+  display: block;
+  @include width-height(16, 8);
+
+  border-radius: 2px;
+
+  &--blue {
+    background-color: $c-info;
+  }
+
+  &--light-grey {
+    background-color: $input-border;
+  }
+
+  &--light-blue {
+    background-color: $c-info-light;
+  }
+
+  &--dark-blue {
+    background-color: $c-info-dark;
+  }
+
+  &--green {
+    background-color: $c-success;
+  }
+
+  &--light-green {
+    background-color: $c-success-light;
+  }
+
+  &--orange {
+    background-color: $c-warning;
+  }
+
+  &--light-orange {
+    background-color: $c-light-warning;
+  }
+
+  &--aqua {
+    background-color: #96D9FF;
+  }
+}

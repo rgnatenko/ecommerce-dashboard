@@ -1,0 +1,41 @@
+.region {
+  @include flex-spb;
+
+  padding-block: 16px;
+  border-top: 1px solid $input-border;
+
+  width: 100%;
+
+  @include text-body;
+  color: $text-primary;
+
+  &__order-number,
+  &__users-amount,
+  &__country,
+  &__transactions,
+  &__revenue,
+  &__convRate {
+    @include flex;
+    font-weight: 700;
+  }
+
+  &__order-number {
+    width: 10px;
+  }
+
+  &__country,&__transactions,
+  &__revenue,
+  &__convRate, &__users-amount {
+    width: 200px;
+  }
+
+  &__country {
+    @include flex;
+    color: $c-info;
+  }
+
+  &__percentage {
+    color: $text-disabled;
+    font-weight: 500;
+  }
+}
