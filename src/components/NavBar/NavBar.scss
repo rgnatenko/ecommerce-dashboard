@@ -23,4 +23,57 @@
     @include flex-center;
     gap: 0;
   }
+
+  &__notification-list {
+    position: absolute;
+    top: 120%;
+    right: 5%;
+    width: 20%;
+  }
+}
+
+
+.notification-list {
+  @include flex-column;
+
+  background-color: $c-white;
+  padding: 10px;
+  border-radius: 8px;
+  @include border($input-border);
+  box-shadow: 0 4px 10px 0 rgba(124, 124, 124, 0.15);
+
+  &__notification {
+    width: 100%;
+  }
+
+  &__top {
+    width: 100%;
+    @include flex-spb;
+  }
+
+  &__clear-btn {
+    width: 100%;
+    @include flex;
+    justify-content: flex-end;
+    text-decoration: underline;
+    color: $text-secondary;
+  }
+}
+
+.notification {
+  @include flex-spb;
+  align-items: flex-start;
+  padding: 10px;
+
+  border-bottom: 1px solid$input-border;
+
+  &--successfull {
+    color: $c-success;
+    background-color: $c-success-light;
+  }
+
+  &--danger {
+    color: $c-danger;
+    background-color: $c-danger-light;
+  }
 }

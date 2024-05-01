@@ -31,6 +31,12 @@ const DasboardAnalytics: React.FC = () => {
         ))}
       </div>
 
+      <TopTextSection
+        title='Profile views for the last month'
+        titleSize="h3"
+        classToAdd='analytics__top'
+      />
+
       <div className="analytics__chart">
         <TotalSalesChart />
       </div>

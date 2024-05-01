@@ -11,6 +11,13 @@
   }
 
   &__table-top {
-    width: max-content;
+    @include onDesktop-1200 {
+      width: 100%;
+      @include flex;
+    }
+
+    @include onDesktop-1600 {
+      @include flex-spb;
+    }
   }
 }

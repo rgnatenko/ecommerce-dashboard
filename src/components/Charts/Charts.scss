@@ -1,5 +1,6 @@
 .charts {
-  @include flex-center-column;
+  @include flex-column;
+  justify-content: flex-end;
   gap: 16px;
 
   &__row {

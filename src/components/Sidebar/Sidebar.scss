@@ -7,7 +7,7 @@
   background-color: $c-white;
   height: calc(100vh - $navbar-top-height);
 
-  @include onDesktop {
+  @include onDesktop-1200 {
     @include flex-column;
     padding: 20px;
 

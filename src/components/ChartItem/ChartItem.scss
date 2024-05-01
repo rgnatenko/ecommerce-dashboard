@@ -30,13 +30,27 @@
   &__vertical-bar {
     position: absolute;
     z-index: 1;
-    @include width-height(115, 85);
+
+    @include onDesktop-1200 {
+      @include width-height(215, 115);
+    }
+
+    @include onDesktop-1600 {
+      @include width-height(115, 85);
+    }
   }
 
   &__vertical-tracker {
     position: sticky;
     z-index: 0;
-    @include width-height(115, 85);
+
+    @include onDesktop-1200 {
+      @include width-height(215, 115);
+    }
+
+    @include onDesktop-1600 {
+      @include width-height(115, 85);
+    }
   }
 
   &__statistics {

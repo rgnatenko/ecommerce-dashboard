@@ -9,7 +9,6 @@
   @include text-body;
   color: $text-primary;
 
-  &__order-number,
   &__users-amount,
   &__country,
   &__transactions,
@@ -17,25 +16,14 @@
   &__convRate {
     @include flex;
     font-weight: 700;
+    width: 100%;
   }
 
   &__order-number {
-    width: 10px;
+    width: 30%;
   }
 
-  &__country,&__transactions,
-  &__revenue,
-  &__convRate, &__users-amount {
-    width: 200px;
-  }
-
-  &__country {
-    @include flex;
-    color: $c-info;
-  }
-
-  &__percentage {
-    color: $text-disabled;
-    font-weight: 500;
+  &__convRate  {
+    justify-content: flex-end;
   }
 }

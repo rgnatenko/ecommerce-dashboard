@@ -3,10 +3,23 @@
   padding: 32px;
 
   &__analytics {
-    grid-column: 1/12;
+
+    @include onDesktop-1200 {
+      grid-column: 1/-1;
+    }
+
+    @include onDesktop-1600 {
+      grid-column: 1/12;
+    }
   }
 
   &__charts {
-    grid-column: 13/-1;
+    @include onDesktop-1200 {
+      grid-column: 1/-1;
+    }
+    @include onDesktop-1600 {
+      grid-column: 13/-1;
+      height: 100%;
+    }
   }
 }

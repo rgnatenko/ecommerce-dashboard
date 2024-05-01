@@ -10,7 +10,7 @@
   &__rating,
   &__status,
   &__time {
-    @include onDesktop {
+    @include onDesktop-1600 {
       width: max-content;
     }
   }

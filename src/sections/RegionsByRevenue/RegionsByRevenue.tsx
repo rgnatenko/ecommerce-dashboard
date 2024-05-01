@@ -9,7 +9,7 @@ const RegionsByRevenue: React.FC = () => {
   return (
     <div className="regions-by-revenue">
       <TopTextSection
-        title='Top regions be revenue'
+        title='Top 5 regions by revenue'
         titleSize="h3"
         classToAdd="regions-by-revenue__top"
       >

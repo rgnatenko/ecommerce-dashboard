@@ -12,41 +12,79 @@
     font-weight: 700;
 
     &--user {
-      @include onDesktop {
+      @include onDesktop-1200 {
+        padding-left: 90px;
+        padding-right: 200px;
+      }
+
+      @include onDesktop-1600 {
+        padding-left: 0;
         padding-right: 130px;
       }
     }
 
     &--reason {
-      @include onDesktop {
+      @include onDesktop-1200 {
+        padding-right: 175px;
+      }
+
+      @include onDesktop-1600 {
         padding-right: 100px;
       }
     }
 
     &--status {
-      @include onDesktop {
+      @include onDesktop-1200 {
+        padding-right: 210px;
+      }
+
+      @include onDesktop-1600 {
         padding-right: 140px;
       }
     }
 
     &--time {
-      @include onDesktop {}
+      @include onDesktop-1600 {}
     }
 
     &--country {
-      padding-right: 65px;
+      @include onDesktop-1200 {
+        padding-right: 135px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 75px;
+      }
     }
 
     &--users {
-      padding-right: 45px;
+      @include onDesktop-1200 {
+        padding-right: 95px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 45px;
+      }
     }
 
     &--transactions {
-      padding-right: 25px;
+      @include onDesktop-1200 {
+        padding-right: 65px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 25px;
+      }
     }
 
     &--revenue {
-      padding-right: 35px;
+      @include onDesktop-1200 {
+        padding-right: 140px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 35px;
+      }
     }
 
     &--totalUsersAmount,
@@ -59,16 +97,35 @@
     }
 
     &--totalUsersAmount {
-      padding-left: 170px;
-      padding-right: 90px;
+      @include onDesktop-1200 {
+        padding-left: 235px;
+        padding-right: 145px;
+      }
+
+      @include onDesktop-1600 {
+        padding-left: 175px;
+        padding-right: 90px;
+      }
     }
 
     &--totalTransactions {
-      padding-right: 20px;
+      @include onDesktop-1200 {
+        padding-right: 60px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 20px;
+      }
     }
 
     &--totalRevenue {
-      padding-right: 50px;
+      @include onDesktop-1200 {
+        padding-right: 160px;
+      }
+
+      @include onDesktop-1600 {
+        padding-right: 55px;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Sidebar from './components/Sidebar/Sidebar';
 import Navbar from './components/NavBar/NavBar';
-import TelegramStatistics from './pages/TelegramStatistics/TelegramStatistics';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Sidebar />
 
-      <TelegramStatistics />
+      <Outlet />
     </div>
   );
 }

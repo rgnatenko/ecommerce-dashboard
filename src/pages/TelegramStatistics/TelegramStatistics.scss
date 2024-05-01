@@ -12,11 +12,15 @@
     grid-column: span 12;
   }
 
-  @include onDesktop {
+  @include onDesktop-1200 {
     grid-column: 5/-1;
   }
 
   &__channel-statistics {
     margin-top: 80px;
+
+    @include onDesktop-1200 {
+      width: 100%;
+    }
   }
 }

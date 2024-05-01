@@ -91,11 +91,23 @@
     background-image: url('./../../../public/china.svg');
   }
 
-  &--USA  {
+  &--USA {
     background-image: url('./../../../public/USA.svg');
   }
 
   &--Vietnam {
     background-image: url('./../../../public/vietnam.svg');
+  }
+
+  &--danger {
+    background-image: url('./../../../public/danger.svg');
+  }
+
+  &--done {
+    background-image: url('./../../../public/done.svg');
+  }
+
+  &--x {
+    background-image: url('./../../../public/x.svg');
   }
 }

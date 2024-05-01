@@ -1,17 +1,26 @@
 .content-analytics {
   @include grid;
   width: 100%;
+  row-gap: 30px;
 
   padding: 32px;
 
-  &__customer-rate, &__projection {
+  &__customer-rate,
+  &__projection {
     position: relative;
     @include flex-column;
     gap: 24px;
   }
 
   &__projection {
-    grid-column: span 11;
+    @include onDesktop-1200 {
+      grid-column: 1/-1;
+    }
+
+    @include onDesktop-1600 {
+      grid-column: span 11;
+    }
+
 
     &-legend {
       @include flex;
@@ -19,7 +28,7 @@
       gap: 24px;
       width: 100%;
 
-      & > div {
+      &>div {
         @include flex;
         gap: 8px;
       }
@@ -27,15 +36,29 @@
   }
 
   &__customer-rate {
-    grid-column: 13/-1;
+    @include onDesktop-1200 {
+      grid-column: 1/-1;
+    }
+
+    @include onDesktop-1600 {
+      grid-column: 13/-1;
+    }
   }
 
   &__track {
     position: absolute;
     bottom: 20px;
-    right: -5px;
     height: 270px;
-    width: 91%;
+
+    @include onDesktop-1200 {
+      width: 95%;
+      right: -10px;
+    }
+
+    @include onDesktop-1600 {
+      width: 91%;
+      right: -5px;
+    }
   }
 
   &__chart {
