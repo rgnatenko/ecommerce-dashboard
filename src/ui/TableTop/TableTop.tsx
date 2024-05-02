@@ -12,14 +12,16 @@ const TableTop: React.FC<Props> = ({ checkboxNeeded, sections, tableClassToAdd }
   return (
     <div className={`table-top ${tableClassToAdd}`}>
       {checkboxNeeded && (
-        <Checkbox
-          sx={{
-            color: '#CBD0DD',
-            '&.Mui-checked': {
-              color: '#2AABEE',
-            },
-          }}
-        />
+        <div className="table-top__checkbox">
+          <Checkbox
+            sx={{
+              color: '#CBD0DD',
+              '&.Mui-checked': {
+                color: '#2AABEE',
+              },
+            }}
+          />
+        </div>
       )}
 
       {sections.map(section => (

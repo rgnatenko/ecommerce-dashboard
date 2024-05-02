@@ -15,8 +15,12 @@
   &__revenue,
   &__convRate {
     @include flex;
-    font-weight: 700;
+    font-weight: 600;
     width: 100%;
+  }
+
+  &__percentage {
+    color: $text-disabled;
   }
 
   &__order-number {

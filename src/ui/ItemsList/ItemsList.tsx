@@ -31,7 +31,7 @@ const ItemsList: React.FC<Props> = ({ items, classToAdd, listType }) => {
 
         {items.map((user: UserType, i: number) => (
           <UserItem
-            classToAdd="list__review"
+            classToAdd="list__user"
             key={i}
             user={user}
           />

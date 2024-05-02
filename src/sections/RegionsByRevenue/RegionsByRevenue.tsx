@@ -3,6 +3,7 @@ import TopTextSection from '../../ui/TopTextSection/TopTextSection';
 import ItemsList from '../../ui/ItemsList/ItemsList';
 import { data } from '../../data';
 import Map from '../../ui/Map/Map';
+import RegionsList from '../../components/Region/RegionsList';
 
 const RegionsByRevenue: React.FC = () => {
   const { getRegions } = data;
@@ -16,13 +17,9 @@ const RegionsByRevenue: React.FC = () => {
         Where you generated most of the revenue
       </TopTextSection>
 
-      <ItemsList
-        listType="regions"
-        items={getRegions()}
-        classToAdd="regions-by-revenue__list"
-      />
+      <RegionsList classToAdd='regions-by-revenue__list' />
 
-      <Map  mapClass="regions-by-revenue__map" />
+      <Map mapClass="regions-by-revenue__map" />
     </div>
   );
 

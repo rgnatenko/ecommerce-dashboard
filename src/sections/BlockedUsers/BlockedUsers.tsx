@@ -1,11 +1,8 @@
 import React from 'react';
-import { data } from '../../data';
 import TopTextSection from '../../ui/TopTextSection/TopTextSection';
-import ItemsList from '../../ui/ItemsList/ItemsList';
 import BlockedUsersChart from '../../ui/charts/BlockedUsersChart/BlockedUsersChart';
 import ChartItem from '../../components/ChartItem/ChartItem';
-
-const { getUsers } = data;
+import UsersList from '../../components/User/UserList';
 
 const BlockedUsers: React.FC = () => (
   <div className="blocked-users">
@@ -17,11 +14,7 @@ const BlockedUsers: React.FC = () => (
       Suspicious users were blocked
     </TopTextSection>
 
-    <ItemsList
-      classToAdd='blocked-users__list'
-      items={getUsers()}
-      listType="users"
-    />
+    <UsersList classToAdd='blocked-users__list' />
 
     <ChartItem
       title="Blocked users"

@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
 
           {!cleared.includes('id1') && (
             <div className='notification-list__notification notification notification--successfull'>
-              <div className="">
+              <div className="notification__item">
                 <div className="icon icon--done" />
                 <p className="notification__message">
                   @vadymDykiy has joined your channel
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
 
           {!cleared.includes('id2') && (
             <div className='notification-list__notification notification notification--danger'>
-              <div className="">
+              <div className="notification__item">
                 <div className="icon icon--danger" />
                 <p className="notification__message">
                   @richardDawkins was blocked

@@ -4,23 +4,20 @@
   @include grid;
   row-gap: 32px;
 
+  padding: 32px;
+
   &__top {
     grid-column: 1/15;
-
-    padding-left: 32px;
-    padding-top: 32px;
   }
 
   &__list {
     @include onDesktop-1200 {
       grid-column: 1/-1;
       overflow-x: auto;
-      padding-left: 32px;
-      padding-right: 32px;
     }
 
     @include onDesktop-1600 {
-      grid-column: 1/14;
+      grid-column: 1/15;
       overflow-x: auto;
       padding-right: 0;
     }
@@ -32,6 +29,8 @@
   }
 
   &__map {
+    border-radius: 8px;
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
       width: 100%;
@@ -39,12 +38,7 @@
     }
 
     @include onDesktop-1600 {
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 600px;
+      grid-column: 16/-1;
       height: 100%;
     }
   }
