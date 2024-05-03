@@ -34,9 +34,11 @@ const Navbar: React.FC = () => {
             className="icon icon--notification"
           />
         </IconButton>
+
         <IconButton>
           <div className="icon icon--menu"></div>
         </IconButton>
+
         <IconButton>
           <div className="icon icon--user"></div>
         </IconButton>

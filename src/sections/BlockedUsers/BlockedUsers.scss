@@ -13,9 +13,14 @@
   }
 
   &__list {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
-      // height: 100%;
     }
 
     @include onDesktop-1600 {
@@ -25,7 +30,14 @@
   }
 
   &__chart {
+    grid-column: 1/-1;
     height: fit-content;
+
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
     }

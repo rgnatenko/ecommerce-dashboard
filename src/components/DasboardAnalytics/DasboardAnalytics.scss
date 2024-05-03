@@ -12,12 +12,17 @@
   &__data {
     width: 100%;
     @include flex-spb;
+    overflow-x: auto;
     padding-bottom: 30px;
     border-bottom: 1px solid $input-border;
   }
 
   &__chart {
     width: 100%;
-    height: 360px;
+    height: 200px;
+
+    @include onTablet {
+      height: 360px;
+    }
   }
 }

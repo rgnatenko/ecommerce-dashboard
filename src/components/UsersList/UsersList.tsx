@@ -8,7 +8,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
@@ -16,48 +15,11 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import UserType from '../../types/User';
 import { data } from '../../data';
 
 const { getUsers } = data;
 const rows = getUsers();
-
-function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1;
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1;
-  }
-  return 0;
-}
-
-type Order = 'asc' | 'desc';
-
-function getComparator<Key extends keyof any>(
-  order: Order,
-  orderBy: Key,
-): (
-  a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string },
-) => number {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
-}
-
-function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
-  const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) {
-      return order;
-    }
-    return a[1] - b[1];
-  });
-  return stabilizedThis.map((el) => el[0]);
-}
 
 interface HeadCell {
   disablePadding: boolean;
@@ -94,21 +56,11 @@ const headCells: readonly HeadCell[] = [
 ];
 
 interface EnhancedTableProps {
-  numSelected: number;
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof UserType) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  order: Order;
-  orderBy: string;
-  rowCount: number;
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
-    props;
-  const createSortHandler =
-    (property: keyof UserType) => (event: React.MouseEvent<unknown>) => {
-      onRequestSort(event, property);
-    };
+  const { onSelectAllClick } = props;
 
   return (
     <TableHead>
@@ -116,10 +68,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
         <TableCell padding="checkbox">
           <Checkbox
             color="primary"
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
             sx={{ color: '#CBD0DD' }}
+            onChange={onSelectAllClick}
           />
         </TableCell>
         {headCells.map((headCell) => (
@@ -127,7 +77,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
-            sortDirection={orderBy === headCell.id ? order : false}
             className="table-top__item"
           >
             {headCell.label}
@@ -181,30 +130,9 @@ type Props = {
 };
 
 const UsersList: React.FC<Props> = ({ classToAdd }) => {
-  const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof UserType>('name');
   const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
-  const handleRequestSort = (
-    event: React.MouseEvent<unknown>,
-    property: keyof UserType,
-  ) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
-    setOrderBy(property);
-  };
-
-  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      const newSelected = rows.map((n, i) => i);
-      setSelected(newSelected);
-      return;
-    }
-    setSelected([]);
-  };
 
   const handleClick = (event: React.MouseEvent<unknown>, id: number) => {
     const selectedIndex = selected.indexOf(id);
@@ -225,6 +153,15 @@ const UsersList: React.FC<Props> = ({ classToAdd }) => {
     setSelected(newSelected);
   };
 
+  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      const newSelected = rows.map((n, i) => i);
+      setSelected(newSelected);
+      return;
+    }
+    setSelected([]);
+  };
+
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
@@ -239,15 +176,6 @@ const UsersList: React.FC<Props> = ({ classToAdd }) => {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  const visibleRows = React.useMemo(
-    () =>
-      stableSort(rows, getComparator(order, orderBy)).slice(
-        page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage,
-      ),
-    [order, orderBy, page, rowsPerPage],
-  );
-
   return (
     <Paper
       sx={{
@@ -261,18 +189,10 @@ const UsersList: React.FC<Props> = ({ classToAdd }) => {
       <TableContainer>
         <Table
           aria-labelledby="tableTitle"
-          size={dense ? 'small' : 'medium'}
         >
-          <EnhancedTableHead
-            numSelected={selected.length}
-            order={order}
-            orderBy={orderBy}
-            onSelectAllClick={handleSelectAllClick}
-            onRequestSort={handleRequestSort}
-            rowCount={rows.length}
-          />
+          <EnhancedTableHead onSelectAllClick={handleSelectAllClick} />
           <TableBody>
-            {visibleRows.map((row, index) => {
+            {rows.map((row, index) => {
               const isItemSelected = isSelected(index);
               const labelId = `enhanced-table-checkbox-${index}`;
 
@@ -301,25 +221,25 @@ const UsersList: React.FC<Props> = ({ classToAdd }) => {
                     />
                   </TableCell>
                   <TableCell align="left">
-                    <div className="user__name-block">
+                    <div className="userlist__name-block">
                       {row.name && (
-                        <div className="user__avatar">
+                        <div className="userlist__avatar">
                           {row?.name[0]}
                         </div>
                       )}
 
-                      <p className="user__name">{row.name}</p>
+                      <p className="userlist__name">{row.name}</p>
                     </div>
                   </TableCell>
-                  <TableCell className='user__reason' align="left">{row.reason}</TableCell>
+                  <TableCell align="left"><p className='userlist__reason'>{row.reason}</p></TableCell>
                   <TableCell
                     style={{ fontFamily: '"Nunito Sans", sans-serif' }}
                     align="center"
                   >
-                    <p className="user__status">{row.status}</p>
+                    <p className="userlist__status">{row.status}</p>
                   </TableCell>
                   <TableCell align="right">
-                    <p className="user__time">{row.time}</p>
+                    <p className="userlist__time">{row.time}</p>
                   </TableCell>
                 </TableRow>
               );
@@ -327,7 +247,6 @@ const UsersList: React.FC<Props> = ({ classToAdd }) => {
             {emptyRows > 0 && (
               <TableRow
                 style={{
-                  height: (dense ? 33 : 53) * emptyRows,
                 }}
               >
                 <TableCell colSpan={6} />

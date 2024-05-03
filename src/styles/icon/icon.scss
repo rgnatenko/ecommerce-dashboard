@@ -12,6 +12,10 @@
   &--menu {
     background-image: url('./../../../public/menu.svg');
     @include width-height(20, 20);
+
+    @include onTablet {
+      display: none;
+    }
   }
 
   &--notification {

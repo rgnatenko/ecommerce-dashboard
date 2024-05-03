@@ -85,7 +85,11 @@
   }
 
   &__blocked-users-bar {
+    width: 350px;
     height: 250px;
-    width: 400px;
+
+    @include onTablet {
+      width: 400px;
+    }
   }
 }

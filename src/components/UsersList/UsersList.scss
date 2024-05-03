@@ -1,0 +1,52 @@
+.userlist {
+
+  &__status,
+  &__name,
+  &__reason,
+  &__time {
+    width: max-content;
+  }
+
+  &__avatar {
+    @include flex-center;
+    @include width-height(40, 40);
+
+    color: $c-info;
+    font-weight: 900;
+
+    background-color: #E5EDFF;
+    border-radius: 50%;
+  }
+
+  &__name-block {
+    @include flex;
+  }
+
+  &__reason {
+    display: block;
+    color: $c-danger !important;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__status {
+    @include flex-center;
+
+    text-transform: uppercase;
+
+    padding: 8px;
+
+    color: $c-danger !important;
+
+    background-color: $c-danger-light;
+    @include border($c-danger);
+    border-radius: 3px;
+  }
+
+  &__time {
+    display: block;
+    font-weight: 700;
+  }
+}

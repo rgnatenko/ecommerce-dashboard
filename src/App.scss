@@ -11,15 +11,14 @@
 @import './components/ChartItem/ChartItem.scss';
 @import './components/Charts/Charts.scss';
 @import './components/DasboardAnalytics/DasboardAnalytics.scss';
-@import './components/User/User.scss';
-@import './components/Region/Region.scss';
+@import './components/UsersList/UsersList.scss';
+@import './components/RegionsList/RegionsList.scss';
 
 @import './ui/BarItem/BarItem.scss';
 @import './ui/Statistics/Statistics.scss';
 @import './ui/AnalyticsDataItem/AnalyticDataItem.scss';
 @import './ui/TopTextSection/TopTextSection.scss';
 @import './ui/TableTop/TableTop.scss';
-@import './ui/ItemsList/ItemsList.scss';
 
 @import './sections/ChannelStatistics/ChannelStatistics.scss';
 @import './sections/BlockedUsers/BlockedUsers.scss';
@@ -30,6 +29,8 @@
 
 .App {
   @include grid;
+
+  // width: 100%;
 
   height: 100vh;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import TopTextSection from '../../ui/TopTextSection/TopTextSection';
 import BlockedUsersChart from '../../ui/charts/BlockedUsersChart/BlockedUsersChart';
 import ChartItem from '../../components/ChartItem/ChartItem';
-import UsersList from '../../components/User/UserList';
+import UsersList from '../../components/UsersList/UsersList';
 
 const BlockedUsers: React.FC = () => (
   <div className="blocked-users">

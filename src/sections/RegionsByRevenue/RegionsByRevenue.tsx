@@ -1,12 +1,9 @@
 import React from 'react';
 import TopTextSection from '../../ui/TopTextSection/TopTextSection';
-import ItemsList from '../../ui/ItemsList/ItemsList';
-import { data } from '../../data';
 import Map from '../../ui/Map/Map';
-import RegionsList from '../../components/Region/RegionsList';
+import RegionsList from '../../components/RegionsList/RegionsList';
 
 const RegionsByRevenue: React.FC = () => {
-  const { getRegions } = data;
   return (
     <div className="regions-by-revenue">
       <TopTextSection

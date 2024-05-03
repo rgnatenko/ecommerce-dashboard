@@ -1,8 +1,14 @@
 .channel-statistics {
   @include grid;
   padding: 32px;
+  row-gap: 20px;
 
   &__analytics {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
 
     @include onDesktop-1200 {
       grid-column: 1/-1;
@@ -14,9 +20,16 @@
   }
 
   &__charts {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
     }
+
     @include onDesktop-1600 {
       grid-column: 13/-1;
       height: 100%;

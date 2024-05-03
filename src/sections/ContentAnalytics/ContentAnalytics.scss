@@ -13,6 +13,12 @@
   }
 
   &__projection {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
     }
@@ -36,6 +42,12 @@
   }
 
   &__customer-rate {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
     @include onDesktop-1200 {
       grid-column: 1/-1;
     }
@@ -47,8 +59,14 @@
 
   &__track {
     position: absolute;
-    bottom: 20px;
-    height: 270px;
+    width: 87%;
+    bottom: 40px;
+    height: 200px;
+    right: -10px;
+
+    @include onTablet {
+      bottom: 20px;
+    }
 
     @include onDesktop-1200 {
       width: 95%;
@@ -62,7 +80,11 @@
   }
 
   &__chart {
-    height: 300px;
     width: 100%;
+    height: 250px;
+
+    @include onTablet {
+      height: 300px;
+    }
   }
 }
